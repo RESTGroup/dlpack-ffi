@@ -1,0 +1,13 @@
+[package]
+name = "dlpack-ffi"
+version = "1.2.0"
+description = "DLPack FFI binding"
+readme = "readme.md"
+edition = "2018"
+rust-version = "1.64.0"
+repository = "https://github.com/RESTGroup/dlpack-ffi"
+keywords = ["ffi", "dlpack"]
+categories = ["science"]
+license = "Apache-2.0"
+
+[dependencies]
