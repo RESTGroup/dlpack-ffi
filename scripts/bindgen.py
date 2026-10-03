@@ -42,7 +42,7 @@ subprocess.run([
     "bindgen",
     "dlpack.h", "-o", "dlpack.rs",
     "--allowlist-file", "dlpack.h",
-    "--default-enum-style", "rust",
+    "--default-enum-style", "newtype",
     "--no-layout-tests",
     "--use-core",
     "--merge-extern-blocks",
@@ -57,6 +57,7 @@ token = token.replace("::core::ffi::", "").replace("::core::option::", "")
 token = """
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
 use core::ffi::*;
 
 """ + token
@@ -68,4 +69,4 @@ shutil.copy(f"{path_temp}/dlpack_ffi.rs", f"{path_out}/src/lib.rs")
 
 # ## Finalize
 
-subprocess.run(["cargo", "fmt", "-p", "rstsr-dlpack-ffi"])
+subprocess.run(["cargo", "fmt", "-p", "dlpack-ffi"])
