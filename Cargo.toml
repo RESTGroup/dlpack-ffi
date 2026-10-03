@@ -1,13 +1,18 @@
 [package]
 name = "dlpack-ffi"
-version = "1.2.0"
+version = "1.3.0"
 description = "DLPack FFI binding"
 readme = "readme.md"
-edition = "2018"
+edition = "2021"
 rust-version = "1.64.0"
 repository = "https://github.com/RESTGroup/dlpack-ffi"
 keywords = ["ffi", "dlpack"]
 categories = ["science"]
 license = "Apache-2.0"
+
+[lib]
+# Generated doc comments embed C/C++ examples (doxygen \code blocks),
+# which are not Rust doctests.
+doctest = false
 
 [dependencies]
